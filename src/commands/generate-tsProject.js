@@ -33,6 +33,11 @@ module.exports = {
       target: 'src/routes/index.ts'
     })
 
+    await template.generate({
+      template: 'tsconfig.js.ejs',
+      target: 'tsconfig.json'
+    })
+
     success(`Generated typescript project`)
   }
 }
