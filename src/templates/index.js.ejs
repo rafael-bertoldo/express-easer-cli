@@ -1,0 +1,29 @@
+import express, { Request, Response, NextFunction } from 'express'
+import { PrismaClient } from '@prisma/client'
+import { AppError } from './errors/appError'
+import { routes } from './routes'
+import cors from 'cors'
+
+export const prisma = new PrismaClient()
+
+export const app = express()
+
+app.use(cors())
+
+app.use(express.json())
+
+app.use('/api', routes)
+
+app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+  if (err instanceof AppError) {
+    return res.status(err.status).send({ message: err.message })
+  }
+
+  console.log(err)
+
+  return res.status(500).send({
+    message: 'Internal server Error',
+    error: err.name,
+    errorMessage: err.message
+  })
+})
