@@ -1,6 +1,6 @@
 {
   "name": "express-easer",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "express-easer CLI",
   "bin": {
     "easer": "bin/express-easer"
