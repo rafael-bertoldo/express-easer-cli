@@ -1,35 +1,25 @@
 import {Request, Response, NextFunction} from 'express'
 
-export class <%= props.name %>Service {
-  static async create(req: Request, res: Response, next: NextFunction) {
-    try {
-      
-    } catch (error) {
-      next(error)
-    }
-  }
+export const create<%= props.name %>Service = async () => {
+  const body = req.body
 
-  static async readAll(req: Request, res: Response, next: NextFunction) {
-    try {
-      
-    } catch (error) {
-      next(error)
-    }
-  }
+  const new<%= props.name %> = await create<%= props.name %>Service
+}
 
-  static async update(req: Request, res: Response, next: NextFunction) {
-    try {
-      
-    } catch (error) {
-      next(error)
-    }
-  }
+export const read<%= props.name %>Service = async () => {
+  const body = req.body
 
-  static async delete(req: Request, res: Response, next: NextFunction) {
-    try {
-      
-    } catch (error) {
-      next(error)
-    }
-  }
+  const new<%= props.name %> = await read<%= props.name %>Service
+}
+
+export const update<%= props.name %>Service = async upate() => {
+  const body = req.body
+
+  const new<%= props.name %> = await update<%= props.name %>Service
+}
+
+export const delete<%= props.name %>Service = async () => {
+  const body = req.body
+
+  const new<%= props.name %> = await delete<%= props.name %>Service
 }

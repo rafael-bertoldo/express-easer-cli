@@ -1,35 +1,25 @@
 import {Request, Response, NextFunction} from 'express'
 
-export class <%= props.name %>Controller {
-  static async create(req: Request, res: Response, next: NextFunction) {
-    try {
-      
-    } catch (error) {
-      next(error)
-    }
-  }
+export const create<%= props.name %>Controller = async (req: Request, res: Response, next: NextFunction) => {
+    const body = req.body
 
-  static async readAll(req: Request, res: Response, next: NextFunction) {
-    try {
-      
-    } catch (error) {
-      next(error)
-    }
-  }
+    const new<%= props.name %> = await create<%= props.name %>Service
+}
 
-  static async update(req: Request, res: Response, next: NextFunction) {
-    try {
-      
-    } catch (error) {
-      next(error)
-    }
-  }
+export const read<%= props.name %>Controller = async (req: Request, res: Response, next: NextFunction) => {
+    const body = req.body
 
-  static async delete(req: Request, res: Response, next: NextFunction) {
-    try {
-      
-    } catch (error) {
-      next(error)
-    }
-  }
+    const new<%= props.name %> = await read<%= props.name %>Service
+}
+
+export const update<%= props.name %>Controller = async (req: Request, res: Response, next: NextFunction) => {
+    const body = req.body
+
+    const new<%= props.name %> = await update<%= props.name %>Service
+}
+
+export const delete<%= props.name %>Controller = async (req: Request, res: Response, next: NextFunction) => {
+    const body = req.body
+
+    const new<%= props.name %> = await delete<%= props.name %>Service
 }
